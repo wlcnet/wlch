@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>성경찬송듣기</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta name="robots" content="noindex,nofollow">
+
+<script type="text/javascript"> 
+<!-- 
+// auto close url window 
+window.addEventListener("load", function(){ 
+setTimeout(loaded, 100); 
+
+}, false); 
+
+function loaded(){ 
+window.scrollTo(0, 1); 
+} 
+//--> 
+</script> 
+<script src="bhmain.js" > </script> 
+</head> 
+
+<body>
+<p><span id="notice"></span><p>
+
+<b>성경 듣기 </b><p>
+
+<div>
+<input type="button" id="hrv" value="개역한글 " OnClick="bibleset('hrv')">&nbsp;
+<input type="button" id="grv" value="개역개정 " OnClick="bibleset('grv')">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script>
+//<input type="button" value="성경읽기" onClick="bibletext()">
+</script>
+
+</div><p>
+
+<div><td><select class="option" id="book" name="book" size=5 onchange="changechap(this,'chap')" ></select></td>
+<td><select class="option" id="chap" name="chap" size=5 onchange="chapset()" ></select></td>
+<td><input type="button" id="bcont" value="연속" OnClick="playbible4('cont')"></td>
+<td><input type="button" id="bonce" value="한번" OnClick="playbible4('once')"></td>
+</div>
+<p>
+<span id="bibleinfo"></span>
+<p><audio id="bible" controls controlsList="nodownload" ><source type="audio/mp3">
+</source>오디오 재생이 지원되지 않습니다.</audio>
+
+<p><b>찬송가 듣기 </b><p>
+- 찬송가 선택 후, 번호를 입력하고 play 를 누릅니다.
+<p><input type="button" id="oldhymn" value="구찬송가" OnClick="playhymn('old')"> (1~558)
+<input type="button" id="newhymn" value="새찬송가" OnClick="playhymn('new')"> (1~645)
+<p><input type="text" id="hymnnum" maxlength="3" size="1" value="">
+<input type="button" id="play" value="Play" OnClick="hymnplay()">
+<select class="option" id="repeat" name="repeat" onchange="dorepeat(this)">
+	<option value="1" selected >한번</option>
+	<option value="2">반복</option>
+	<option value="3">연속</option></select>
+
+<p><audio id="hymn" controls controlsList="nodownload" ><source type="audio/mp3">
+</source>오디오 재생이 지원되지 않습니다.</audio><p>
+
+<br><b>찬송성경 </b> 
+<select class="option" id="playlist" name="playlist" onchange="mixplayset()">
+ <option value="1" selected >연속듣기 1</option>
+ <option value="2">연속듣기 2</option>
+ <option value="3">연속듣기 3</option>
+ <option value="4">연속듣기 4</option></select>
+
+ <input type="button" id="mixplay" value="Play" onclick="domixplay()"><p>
+ <audio id="bhmix" controls controlsList="nodownload" ><source type="audio/mp3">
+ </source>오디오 재생이 지원되지 않습니다.</audio>
+ 
+<br><p><input type="button" value="초기화" onClick="window.location.reload()">
+<audio id="bible" controls controlsList="nodownload" ><source type="audio/mp3">
+</source>오디오 재생이 지원되지 않습니다.</audio>
+
+<script src="bhinit.js"></script>
+</body> 
+</html> 
